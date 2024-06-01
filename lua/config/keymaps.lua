@@ -43,3 +43,45 @@ keymap.set("n", "<leader>gh", vim.lsp.buf.hover, opts)
 keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, opts)
 keymap.set("n", "<leader>gk", vim.lsp.buf.signature_help, opts)
 keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+-- AI
+
+keymap.set("n", "<leader>ai", ":Gen<CR>")
+
+-- Telescope
+
+local builtin = require("telescope.builtin")
+
+keymap.set("n", "<leader>ff", builtin.find_files, {})
+keymap.set("n", "<leader>fg", builtin.live_grep, {})
+keymap.set("n", "<leader>fb", builtin.buffers, {})
+keymap.set("n", "<leader>fh", builtin.help_tags, {})
+
+-- Codeium
+
+local filetypes = {
+  "javascript",
+  "python",
+  "lua",
+  "html",
+  "css",
+  "json",
+  "typescript",
+  "ruby",
+  "perl",
+  "bash",
+  "sh",
+  "make",
+  "pod",
+  "markdown",
+  "yaml",
+}
+
+for _, ft in ipairs(filetypes) do
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = ft,
+    callback = function()
+      vim.keymap.set("n", "<tab>", ":CodeiumComplete<CR>", { buffer = true, noremap = true, silent = true })
+    end,
+  })
+end

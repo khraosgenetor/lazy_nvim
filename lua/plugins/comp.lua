@@ -1,6 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
+    "Exafunction/codeium.nvim",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
@@ -40,6 +41,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "codeium" },
       }, {
         { name = "buffer" },
       }),

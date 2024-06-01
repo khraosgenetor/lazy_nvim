@@ -40,6 +40,11 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, {})
+      vim.keymap.set("n", "<leader>gk", vim.lsp.buf.signature_help, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
     end,
   },
 }
