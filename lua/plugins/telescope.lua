@@ -8,7 +8,6 @@ return {
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      "nvim-telescope/telescope-frecency.nvim",
       "nvim-telescope/telescope-media-files.nvim",
       "nvim-telescope/telescope-project.nvim",
       "nvim-telescope/telescope-github.nvim",
@@ -82,7 +81,6 @@ return {
       require("telescope").load_extension("zoxide")
       require("telescope").load_extension("ui-select")
       require("telescope").load_extension("file_browser")
-      require("telescope").load_extension("frecency")
       require("telescope").load_extension("media_files")
       require("telescope").load_extension("project")
       require("telescope").load_extension("gh")
