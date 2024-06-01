@@ -3,6 +3,8 @@ return {
   dependencies = {
     "tpope/vim-fugitive",
   },
+  lazy = false,
+  priority = 1000,
   config = function()
     require("gitsigns").setup({
       signs = {
